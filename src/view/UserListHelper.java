@@ -17,7 +17,7 @@ public class UserListHelper {
      * @param userList the UserList to save
      */
     public static void save(UserList userList) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("users.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/users.dat"))) {
             oos.writeObject(userList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -29,7 +29,7 @@ public class UserListHelper {
      * @return the loaded UserList, or a new UserList if none exists
      */
     public static UserList load() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("users.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/users.dat"))) {
             return (UserList) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             return new UserList();

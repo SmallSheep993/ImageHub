@@ -18,7 +18,7 @@ public class AlbumListHelper {
      * @param albumList the AlbumList object to save
      */
     public static void save(String username, AlbumList albumList) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(username + "_albums.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("data/" + username + "_albums.dat"))) {
             oos.writeObject(albumList);
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,7 +31,7 @@ public class AlbumListHelper {
      * @return the AlbumList for the user, or a new AlbumList if none was found
      */
     public static AlbumList load(String username) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(username + "_albums.dat"))) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/" + username + "_albums.dat"))) {
             return (AlbumList) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             return new AlbumList();
