@@ -1,33 +1,46 @@
-A JavaFX-based photo album management application
-This project allows users to:
-1. Login as a user or admin
-2. Create and manage albums
-3. Add, delete, move, and copy photos
-4. Edit photo descriptions and tags
-5. Search photos by tags
-6. View photos in a detailed slideshow
+# Photos APP
 
+A JavaFX-based photo album management application.
 
-Before you begin, make sure:
-✅ Java Development Kit (JDK) 21 or higher is installed.
-✅ JavaFX SDK 21 is downloaded and extracted.
-📢 Important:
-Set your JavaFX SDK path correctly based on your system.
-Below, replace /path/to/javafx-sdk-21.0.6/lib with your actual JavaFX library path.
+## Features
+- Login as a user or admin
+- Create and manage albums
+- Add, delete, move, and copy photos
+- Edit photo descriptions and tags
+- Search photos by tags
+- View photos in a detailed slideshow
 
-Terminal Commands （run through the terminal)
-==================================================================================================================================================================================
+---
+
+## Setup Instructions
+Before you begin, ensure:
+- Java Development Kit (JDK) 21 or higher is installed
+- JavaFX SDK 21 is downloaded and extracted
+
+**Important:**  
+Replace `/path/to/javafx-sdk-21.0.6/lib` with your actual JavaFX SDK lib path.
+
+---
+
+## Terminal Commands
+
+```bash
 # 1. Clean previous builds
 rm -rf out
+
 # 2. Create output directory
 mkdir -p out
+
 # 3. Compile Java files
 javac --module-path /path/to/javafx-sdk-21.0.6/lib --add-modules javafx.controls,javafx.fxml -d out -sourcepath src src/view/*.java
+
 # 4. Copy FXML files
 mkdir -p out/view
 cp src/view/*.fxml out/view/
+
 # 5. Run the application
 java --module-path /path/to/javafx-sdk-21.0.6/lib --add-modules javafx.controls,javafx.fxml -cp out view.Photos
+
 
 
 Project Structure：
