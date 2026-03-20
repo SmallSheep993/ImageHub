@@ -1,4 +1,4 @@
-# Photos APP
+# ImageHub
 
 A JavaFX-based photo album management application.
 
